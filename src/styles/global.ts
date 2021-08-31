@@ -17,12 +17,10 @@ export default createGlobalStyle`
     color: ${(props) => props.theme.colors.text};
     font-size: 20px;
   }
-  body, input, button {
+  body, input {
     font: 16px Roboto, sans-serif;
   }
-  button {
-    cursor: pointer;
-  }
+ 
   .page{
     position:absolute;
     top:0;

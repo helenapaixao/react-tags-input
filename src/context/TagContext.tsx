@@ -6,8 +6,11 @@ interface TagList {
 }
 
 const TagContext = createContext<TagList>({ emails: [], setEmails: null })
+
 const TagContextProvider = ({ children }: { children: ReactNode }) => {
-  const [emails, setEmails] = useState<string[]>(['hp.helenapaixao@gmail.com'])
+  const [emails, setEmails] = useState<string[]>([
+    'hp.helenapaixao@gmail.com',
+  ])
 
   return <TagContext.Provider value={{ emails, setEmails }}>{children}</TagContext.Provider>
 }
