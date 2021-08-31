@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TagsInput from '@/components/TagsInput/TagsInput'
+import TagsInput from '../components/TagsInput/TagsInput'
 
 import { cleanup, render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
@@ -16,18 +16,17 @@ describe('TagsInput Component', () => {
 
   it('deve renderizar as tags enviadas por atributos', () => {
     const container = render(<TagsInput />)
-    const input = container.getByRole('textbox', { name: /tag/i })
+
+      const input = container.getByLabelText('tags')
     userEvent.type(input, 'nao-responda@rarolabs.com.br{enter}')
     const { debug } = render(<TagsInput />)
     debug()
   })
 
   it('deve renderizar tags quando preencher o input e pressionar enter', () => {
-    const emails = ['contato@rarolabs.com.br', 'nao-responda@rarolabs.com.br']
-
     const container = render(<TagsInput />)
 
-    const input = container.getByRole('textbox', { name: /tag/i })
+    const input = container.getByLabelText('emails')
 
     userEvent.type(input, 'nao-responda@rarolabs.com.br{enter}')
 
@@ -38,7 +37,7 @@ describe('TagsInput Component', () => {
 
   it('deve renderizar tags quando preencher o input e pressionar tab', () => {
     const container = render(<TagsInput />)
-    const input = container.getByRole('textbox', { name: /tag/i })
+      const input = container.getByLabelText('emails')
 
     userEvent.type(input, 'nao-responda@rarolabs.com.br{tab}')
 
@@ -49,7 +48,7 @@ describe('TagsInput Component', () => {
 
   it('deve deletar a útima tag criada ao pressionar o botão de backspace', async () => {
     const container = render(<TagsInput />)
-    const input = container.getByRole('textbox', { name: /tag/i })
+    const input = container.getByLabelText('emails')
 
     userEvent.type(input, 'nao-responda@rarolabs.com.br{backspace}')
 

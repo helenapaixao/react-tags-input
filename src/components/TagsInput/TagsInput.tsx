@@ -1,15 +1,10 @@
-import React, { useContext, useState} from 'react'
+import React, { useContext} from 'react'
 import { TextField } from '@material-ui/core'
 import { TagContext } from '../../context/TagContext'
 
 const TagsInput: React.FC = () => {
   const { emails, setEmails } = useContext(TagContext)
-  const [tags, setTags] = useState<string[]>([
-    "contato@rarolabs.com.br",
-    "nao-responda@rarolabs.com.br"
-  ]);
-
-  
+ 
   const registerCharacters: object = {
     0: 'NumpadEnter',
     1: 'Tab',
