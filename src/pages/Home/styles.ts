@@ -6,6 +6,11 @@ const style = makeStyles(() => ({
     width: '65%',
     height: '100vh',
   },
+  Principal: {
+background: '#f5f5f5'
+
+
+  },
 
   Title: {
     textAlign: 'center',

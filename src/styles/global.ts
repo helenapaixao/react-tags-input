@@ -6,12 +6,14 @@ export default createGlobalStyle`
     padding: 0;
     outline: 0;
     box-sizing:border-box;
+    background-color: #B2D3A8;
   }
   body {
     font: 400 14px 'Roboto', sans-serif;
     color: ${(props) => props.theme.colors.text};
     background: ${(props) => props.theme.colors.background};
     -webkit-font-smoothing: antialiased;
+      background-color: #B2D3A8;
   }
   h1 {
     color: ${(props) => props.theme.colors.text};

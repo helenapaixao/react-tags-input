@@ -13,7 +13,7 @@ export const Home: React.FC = () => {
   return (
     
     <TagContextProvider>
-      <Grid container justify="center" alignItems="center">
+      <Grid container justify="center" alignItems="center" className={classes.Principal}>
         <Paper elevation={3} className={classes.Container}>
           <h1 className={classes.Title}>Lista de E-mails</h1>
           <TagsInput />

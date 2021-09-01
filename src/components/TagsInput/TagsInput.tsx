@@ -1,10 +1,10 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import { TextField } from '@material-ui/core'
 import { TagContext } from '../../context/TagContext'
 
 const TagsInput: React.FC = () => {
   const { emails, setEmails } = useContext(TagContext)
- 
+
   const registerCharacters: object = {
     0: 'NumpadEnter',
     1: 'Tab',
@@ -13,13 +13,15 @@ const TagsInput: React.FC = () => {
     5: 'Enter',
   }
 
-  const validEmail = (email: string) => {
+  const ValidationEmail = (email: string) => {
     const regexEmail: RegExp =
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
 
     if (regexEmail.test(email)) {
       emails.push(email)
       setEmails([...emails])
+    } else {
+      alert('Email inválido')
     }
   }
 
@@ -33,18 +35,16 @@ const TagsInput: React.FC = () => {
 
           arrayEmails.forEach((element: string, index: number) => {
             arrayEmails[index] = element.trim()
-            validEmail(arrayEmails[index])
+            ValidationEmail(arrayEmails[index])
           })
           e.target.value = ''
         } else {
-          validEmail(e.target.value)
+          ValidationEmail(e.target.value)
           e.target.value = ''
         }
       }
     }
   }
-
-  
 
   return (
     <>
@@ -55,7 +55,6 @@ const TagsInput: React.FC = () => {
         id="emails"
         name="emails"
         placeholder="Adiciona um novo e-mail"
-        label="emails"
       />
     </>
   )

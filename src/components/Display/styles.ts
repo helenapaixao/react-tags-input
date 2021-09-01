@@ -13,12 +13,12 @@ const useStyles = makeStyles(() => ({
       height: '0.9em',
     },
     '&::-webkit-scrollbar-track': {
-      background: '#592941',
+      background: '#000',
     },
     '&::-webkit-scrollbar-thumb': {
       backgroundColor: 'darkgray',
       borderRadius: 20,
-      border: '3px solid #498467',
+     
     },
   },
   tagsItem: {
