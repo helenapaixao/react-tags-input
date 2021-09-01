@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/styles'
 const useStyles = makeStyles(() => ({
   ContainerBox: {
     marginTop: 30,
-    border: '1px solid darkgray',
+    border: '1px solid #592941',
     borderRadius: 3,
     padding: 7,
     overflowY: 'auto',
@@ -13,12 +13,12 @@ const useStyles = makeStyles(() => ({
       height: '0.9em',
     },
     '&::-webkit-scrollbar-track': {
-      background: 'rgb(238, 238, 238)',
+      background: '#592941',
     },
     '&::-webkit-scrollbar-thumb': {
       backgroundColor: 'darkgray',
       borderRadius: 20,
-      border: '3px solid rgb(238, 238, 238)',
+      border: '3px solid #498467',
     },
   },
   tagsItem: {
